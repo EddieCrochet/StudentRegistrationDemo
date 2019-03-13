@@ -47,5 +47,25 @@ namespace StudentRegistrationDemo.Models
             }
             return "Delete Unsuccessful";
         }
+
+        public List<Student> getAllStudent()
+        {
+            return studentList;
+        }
+
+        public String UpdateStudent(Student std)
+        {
+            for(int i = 0; i < studentList.Count; i++)
+            {
+                Student stdn = studentList.ElementAt(i);
+                if(stdn.RegistrationNumber.Equals(std.RegistrationNumber))
+                {
+                    studentList[i] = std;
+                    //updates new record
+                    return "Update successful";
+                }
+            }
+            return "Update Unsuccessful";
+        }
     }
 }
