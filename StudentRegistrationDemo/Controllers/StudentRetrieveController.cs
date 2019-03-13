@@ -20,11 +20,10 @@ namespace StudentRegistrationDemo.Controllers
             return StudentRegistration.getInstance().getAllStudent();
         }
 
-        // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("GetAllStudentRecords")]
+        public JsonResult GetAllStudentRecords()
         {
-            return "value";
+            return Json(StudentRegistration.getInstance().getAllStudent());
         }
     }
 }
